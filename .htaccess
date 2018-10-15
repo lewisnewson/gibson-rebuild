@@ -1,0 +1,81 @@
+RewriteEngine on
+
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+<ifModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/js
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/javascript-x
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+<FilesMatch "\.(html|php|txt|xml|js|css)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
+</ifModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access 1 month"
+ExpiresByType image/gif "access 1 month"
+ExpiresByType image/png "access 1 month"
+ExpiresByType image/jpg "access 1 month"
+ExpiresByType image/jpeg "access 1 month"
+ExpiresByType text/javascript "access 1 week"
+ExpiresByType application/pdf "access 1 month"
+ExpiresDefault "access 7 days"
+</IfModule>
+
+#Security against basic attacks.
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+RewriteRule .* – [F,L]
+
+# Force Trailing Slash
+RewriteCond %{REQUEST_URI} /+[^\.]+$
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+
+RewriteRule ^privacy-policy/$ docs/privacy-policy.pdf [NC,L]
+RewriteRule ^terms-and-conditions/$ docs/terms-and-conditions.pdf [NC,L]
+RewriteRule ^about-deence-web-design/$ about-deence-web-design-lincoln.php [NC,L]
+RewriteRule ^bespoke-web-design/$ bespoke-web-design-lincoln.php [NC,L]
+RewriteRule ^bespoke-web-development/$ bespoke-web-development-lincoln.php [NC,L]
+RewriteRule ^affordable-website-solutions/$ affordable-website-solutions-lincoln.php [NC,L]
+RewriteRule ^wordpress-development/$ wordpress-development-lincoln.php [NC,L]
+RewriteRule ^photography-services/$ photography-lincoln.php [NC,L]
+RewriteRule ^get-in-touch-with-us/$ get-in-touch.php [NC,L]
+RewriteRule ^get-a-web-design-quote/$ get-a-quote.php [NC,L]
+
+RewriteCond %{HTTP_HOST} ^www.deence.com$ [NC]
+RewriteCond %{THE_REQUEST} ^.*/index\.php
+RewriteRule ^(.*)index.php$ /$1 [R=301,L]
+
+# Force to www.
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteCond %{HTTP_HOST} !^img\.
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# Force SSL
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^open-license$ mit-license.txt [L,NC]
