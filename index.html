@@ -4,54 +4,157 @@
     <meta charset=utf-8>
     <meta http-equiv=X-UA-Compatible content=IE=edge>
     <title>CMP1130M Web Authoring Assignment | Gison Rebuild</title>
-    <meta name=viewport content=width=1040>
-    <link href=https://fonts.googleapis.com/css?family=Roboto:300 rel=stylesheet>
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-
-        body {
-            background-color: #EDEDED;
-            font-family: Roboto, sans-serif;
-            -moz-osx-font-smoothing: grayscale;
-            -webkit-font-smoothing: antialiased;
-            text-align: center;
-            margin: 0;
-        }
-
-        h1 {
-            margin: 0 0 8px 0;
-            color: #40A1CA;
-            font-size: 48px;
-            font-weight: 300;
-        }
-
-        p {
-            margin: 0;
-            color: #8B8B88;
-            font-size: 24px;
-            font-weight: 300;
-        }
-
-        .wrap {
-            display: table;
-            width: 100%;
-            height: 100%;
-        }
-
-        .inner {
-            display: table-cell;
-            vertical-align: middle;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/dist/slick.css">
+    <link rel="stylesheet" href="css/dist/slick-theme.css">
+    <link rel="stylesheet" href="css/dist/main.css">
 </head>
 <body>
-    <div class=wrap>
-        <div class=inner>
-            <h1>gibson.lewisnewson.com</h1>
-        </div>
+
+  <div class="landing-homepage">
+    <nav class="navigation" id="top">
+      <button class="navigation-toggle hamburger hamburger--emphatic" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <div class="logo">
+        <img src="/assets/img/gibson-logo.png" alt="Gibson Logo">
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item"><a href="/" class="nav-link">HOME</a></li>
+        <li class="nav-item"><a href="/demo.html" class="nav-link" style="font-weight:900">VIDEO DEMO</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">NEWS &amp; LIFESTYLE</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">COMMUNITY</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">STORE</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">SUPPORT</a></li>
+      </ul>
+    </nav>
+
+    <div class="landing-split">
+      <div class="left">
+        <img src="/assets/img/gibson-les-paul.png" alt="Gibson Les Paul">
+        <p>The Gibson Les Paul and SG Standards are classic models that share a common heritage, as well as most of their essential ingredients.</p>
+        <a href="/" class="gen-btn">TAKE A LOOK</a>
+      </div>
+      <div class="right"></div>
     </div>
+  </div>
+
+  <section class="homepage-slider">
+    <div class="max-width">
+      <div class="slider-track">
+        <div class="slide">
+          <img src="/assets/img/product-img-1.jpg" alt="Product Slider Item">
+          <p>B.B. King Lucille 2019</p>
+        </div>
+        <div class="slide">
+          <img src="/assets/img/product-img-2.jpg" alt="Product Slider Item">
+          <p>ES-339 2018</p>
+        </div>
+        <div class="slide">
+          <img src="/assets/img/product-img-3.jpg" alt="Product Slider Item">
+          <p>The Paul 40th Anniversary</p>
+        </div>
+        <div class="slide">
+          <img src="/assets/img/product-img-4.jpg" alt="Product Slider Item">
+          <p>A Special Kind of SG</p>
+        </div>
+        <div class="slide">
+          <img src="/assets/img/product-img-5.jpg" alt="Product Slider Item">
+          <p>The Original ES-335</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="max-width">
+      <div class="gallery-grid">
+        <div class="gallery-item item-wide"><img src="/assets/img/gallery-image-1.jpg" alt="Gibson Gallery Picture"></div>
+        <div class="gallery-item item-wide-deep"><img src="/assets/img/gallery-image-2.png" alt="Gibson Gallery Picture"></div>
+        <div class="gallery-item"><img src="/assets/img/gallery-image-3.jpg" alt="Gibson Gallery Picture"></div>
+        <div class="gallery-item"><img src="/assets/img/gallery-image-4.jpg" alt="Gibson Gallery Picture"></div>
+        <div class="gallery-item"><img src="/assets/img/gallery-image-5.jpg" alt="Gibson Gallery Picture"></div>
+        <div class="gallery-item item-wide"><img src="/assets/img/gallery-image-6.webp" alt="Gibson Gallery Picture"></div>
+        <div class="gallery-item"><img src="/assets/img/gallery-image-7.jpg" alt="Gibson Gallery Picture"></div>
+      </div>
+      <a href="/">View All</a>
+    </div>
+  </section>
+
+  <section class="latest-blog">
+    <div class="max-width">
+      <h2>Latest Gibson News</h2>
+      <div class="latest-blogs">
+        <div class="blog-post">
+          <div class="img-holder">
+            <img src="/assets/img/blog-post-new-artist.jpg" alt="New Artist Named">
+          </div>
+          <div class="blog-content">
+            <p class="title">New Artist Named</p>
+            <p class="category">News</p>
+            <p class="preview-text">
+              Gibson Brands, the world’s most iconic guitar brand, is proud to announce B.B. King as a "Gibson Legacy Artist" and has launched a new, Alpine White Limited Edition “Lucille” ES. Throughout his...<a href="">Read More</a>.
+            </p>
+          </div>
+        </div>
+        <div class="blog-post">
+          <div class="img-holder">
+            <img src="/assets/img/blog-post-new-ceo.jpg" alt="New CEO">
+          </div>
+          <div class="blog-content">
+            <p class="title">CEO &amp; President Changes</p>
+            <p class="category">News</p>
+            <p class="preview-text">
+              Gibson Brands, Inc., the world’s most iconic guitar brand, today announced the appointment of James “JC” Curleigh as president and chief executive officer. Curleigh joins Gibson from Levi Strauss & Co...<a href="">Read More</a>.
+            </p>
+          </div>
+        </div>
+        <div class="blog-post">
+          <div class="img-holder">
+            <img src="/assets/img/blog-post-new-music.jpg" alt="New Music">
+          </div>
+          <div class="blog-content">
+            <p class="title">Mark Knopfler's New Music</p>
+            <p class="category">News</p>
+            <p class="preview-text">
+              Mark Knopfler’s next project is a stage musical. He is writing new music and the lyrics for a new stage musical based on the award-winning 1983 film Local Hero. Knopfler composed and produced the...<a href="">Read More</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="upper">
+      <img src="/assets/img/gibson-logo.png" alt="Gibson Logo">
+      <ul>
+        <li>Home</li>
+        <li>Products</li>
+        <li>News &amp; Lifestyle</li>
+      </ul>
+      <ul>
+        <li>Community</li>
+        <li>Store</li>
+        <li>Support</li>
+      </ul>
+      <div class="newsletter-signup">
+        <input type="text" name="email" placeholder="Email:">
+        <button type="submit" class="gen-btn">SUBMIT</button>
+      </div>
+    </div>
+    <div class="lower">
+      <p>Copyright Gibson 2019</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/js/slick.js"></script>
+<script src="/js/main.js"></script>
 </html>
